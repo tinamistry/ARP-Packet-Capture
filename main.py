@@ -13,9 +13,6 @@ def packetCapture():
         if isinstance(eth.data, dpkt.arp.ARP): #if its in arp packet
             arp = buffer[14:42]
             arp = struct.unpack('!HHBBH6s4s6s4s', arp)
-
-
-
             hardware_type = arp[0]
             protocol_type = arp[1]
             hardware_length = arp[2]
